@@ -26,6 +26,16 @@ Each folder in the repository contains the solutions for each day's challenges o
 └── README.md
 ```
 
+## My progress
+
+![progress](2024/assets/progress.png)
+
+## Problems to solve
+
+- [X] [**Day 1**](2024/1/problem.md)
+- [ ] [**Day 2**](2024/2/problem.md)
+- [X] [**Day 3**](2024/3/problem.md)
+
 ## How can I view the solutions?
 
 1. Clone the repository to your local machine using:
