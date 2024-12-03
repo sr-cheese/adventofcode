@@ -28,11 +28,7 @@ Each folder in the repository contains the solutions for each day's challenges o
 
 ## My progress
 
-<center>
-
 ![progress](2024/assets/progress.png)
-
-</center>
 
 ## Problems to solve
 
