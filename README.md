@@ -8,7 +8,7 @@ This repository contains my solutions to the daily programming puzzles published
 
 Each folder in the repository contains the solutions for each day's challenges order by the year they were published:
 
-```
+``` text
 .
 ├── 2024
 │   ├── 1
