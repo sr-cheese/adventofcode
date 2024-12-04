@@ -15,6 +15,7 @@
 #   8 6 4 4 1: Safe by removing the third level, 4.
 #   1 3 6 7 9: Safe without removing any level.
 
+# My try (doesn't work)
 import copy
 
 # read input file
@@ -66,3 +67,57 @@ for line in result :
     safe_reports += check_line(line, 0)
 
 print(safe_reports)
+
+
+#####################################################
+#               Try to understand 1                 #
+#####################################################
+
+
+
+
+# def is_safe(row):
+#     inc = [row[i + 1] - row[i] for i in range(len(row) - 1)]
+#     return set(inc) <= {1, 2, 3} or set(inc) <= {-1, -2, -3}
+
+# data = [[int(y) for y in x.split(' ')] for x in open('input').read().split('\n')]
+
+# safe_count = sum([is_safe(row) for row in data])
+# print(safe_count)
+
+# safe_count = sum([any([is_safe(row[:i] + row[i + 1:]) for i in range(len(row))]) for row in data])
+# print(safe_count)
+
+
+#####################################################
+#               Try to understand 2                 #
+#####################################################
+
+
+# import re
+
+# with open("input") as f:
+#     ls = f.read().strip().split("\n")
+
+# ns = [list(map(int, re.findall("\\d+", x))) for x in ls]
+
+
+# def safe1(levels):
+#     return all(1 <= abs(n1 - n2) <= 3 for n1, n2 in zip(levels, levels[1:])) and (
+#         levels == sorted(levels) or levels == sorted(levels)[::-1]
+#     )
+
+
+# def safe2(levels):
+#     return any(safe1(levels[:i] + levels[i + 1 :]) for i in range(len(levels)))
+
+
+# # Part 1
+# print(sum(safe1(levels) for levels in ns))
+
+# # Part 2
+# print(sum(safe2(levels) for levels in ns))
+
+#####################################################
+#####################################################
+#####################################################
