@@ -1,13 +1,9 @@
-#############
-# IMPORTS   #
-#############
+###################################################################################### imports
 
 import re
 import math
 
-#############
-# FUNCTIONS #
-#############
+#################################################################################### functions
 
 def clean_orders(order) :
     if len(order) > 0 :
@@ -37,11 +33,9 @@ def array_search(search_list, orders) :
 
     return array_search(search_list[1:], orders)
     
-#############
-# EXECUTION #
-#############
+######################################################################################## main
 
-with open('example_input', 'r') as file :
+with open('input', 'r') as file :
     content = file.read()
     lines   = content.strip().split('\n')
 
@@ -51,7 +45,4 @@ raw_updates = list(map( lambda line: ''.join(re.findall(r'\d*,\d*', line)), line
 orders = [ order for order in list(map(clean_orders, raw_orders)) if order is not None ]
 updates = [ update for update in list(map(clean_updates, raw_updates)) if update is not None ]
 
-incorrectly_ordered = [ update for update in updates if not array_search(update, orders) ]
-
-# Falta reordenar las incorrectas
-print(incorrectly_ordered)
+print(sum([ int(update[math.floor(len(update)/2)]) for update in updates if array_search(update, orders) ]))
